@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Preview</title>
+        <style>
+            body {
+                background: beige;
+            }
+
+            .Topic {
+                font-size: 50px;
+                margin: 0;
+                font-family: sans-serif;
+                font-weight: bolder;
+                color: brown;
+                display: flex;
+                justify-content: center;
+            }
+
+            .myName {
+                font-size: 20px;
+                margin: 0;
+                margin-top: 15px;
+                font-family: serif;
+                display: flex;
+                justify-content: center;
+            }
+
+            p {
+                font-size: 20px;
+                font-family: serif;
+            }
+
+            .Output-div {
+                display: flex;
+                margin-top: 16px;
+                justify-content: space-evenly;
+            }
+        
+            h1 {
+                font-family: serif;
+                font-size: 26px;
+                color: brown;
+                display: flex;
+                justify-content: center;
+            }
+            
+            .video-div {
+                padding: 20px;
+                border: 1px solid brown;
+                border-radius: 12px;
+                box-shadow: 1px 1px 0px 0px brown;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 class="Topic">Crowd Monitoring System</h1>
+        <p class="myName">Vignesh Kabilan M - 20D136</p>
+        
+        <div class="Output-div">
+            <div>
+                <h1>Input Video:</h1>
+                <div class="video-div">
+                    <video width="320" height="240" controls>
+                        <source src="{{url_for('static', filename='videos/' + video_name)}}" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+            <div>
+                <h1>Output of the Model:</h1>
+                <p>Total People Detected: {{ total }}</p>
+                <p>No of People Entered: {{ move_in }}</p>
+                <p>No of People Exited: {{ move_out }}</p>
+                <p>No of Present inside: {{ move_in - move_out}}</p>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Crowd Monitoring System</title>
+        <style>
+            body {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin: 10%;
+                background: beige;
+            }
+
+            .Topic {
+                font-size: 50px;
+                margin: 0;
+                font-family: sans-serif;
+                font-weight: bolder;
+                color: brown;
+            }
+
+            .subTopic {
+                font-size: 20px;
+                font-family: sans-serif;
+            }
+
+            .processing {
+                font-size: 35px;
+                font-family: sans-serif;
+                font-weight: bold;
+            }
+
+            form {
+                margin: 20px;
+                padding: 20px;
+                border: 1px solid brown;
+                border-radius: 10px;
+            }
+        </style>
+        <script>
+            const LoadingAnimation = () => {
+                document.getElementById("loading").innerHTML = "Processing..."
+            }
+        </script>
+    </head>
+    <body>
+        <h1 class="Topic">Crowd Monitoring System</h1>
+        <p class="subTopic">Final Year Project</p>
+
+        <form action="{{url_for('upload')}}" method="post" enctype="multipart/form-data" onsubmit="LoadingAnimation()">
+            <input type="file" name="video" accept=".mp4"/>
+            <input type="submit" value="Upload">
+        </form>
+
+        <p class="processing" id="loading"></p>
+    </body>
+</html>
