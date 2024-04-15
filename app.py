@@ -17,7 +17,7 @@ import schedule
 import logging
 import imutils
 import time
-import dlib
+# import dlib
 import json
 import csv
 import cv2
@@ -212,13 +212,14 @@ def people_counter(input_path, output_path):
 					# construct a dlib rectangle object from the bounding
 					# box coordinates and then start the dlib correlation
 					# tracker
-					tracker = dlib.correlation_tracker()
-					rect = dlib.rectangle(startX, startY, endX, endY)
-					tracker.start_track(rgb, rect)
+	 
+					# tracker = dlib.correlation_tracker()
+					# rect = dlib.rectangle(startX, startY, endX, endY)
+					# tracker.start_track(rgb, rect)
 
-					# add the tracker to our list of trackers so we can
-					# utilize it during skip frames
-					trackers.append(tracker)
+					# # add the tracker to our list of trackers so we can
+					# # utilize it during skip frames
+					# trackers.append(tracker)
 
 		# otherwise, we should utilize our object *trackers* rather than
 		# object *detectors* to obtain a higher frame processing throughput
